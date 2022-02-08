@@ -1,0 +1,4 @@
+after making better predictor (using knowledge from 3blue1brown recent video about 5 letters word game
+
+tryna do, best deceiving bot
+(bot that doesnt have a secret number, but choose an output that is valid, but also eliminate as little guess as possible)
