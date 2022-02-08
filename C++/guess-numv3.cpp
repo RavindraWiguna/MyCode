@@ -111,12 +111,12 @@ bool compare_info(pair<double, int> a, pair<double, int> b){
 int calculate_best_guess(){
     vector<pair<double, int>> Information;
     pair<double, int> temp;
-    double case_counter[13] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     int valid_case[9] = {0, 3, 4, 6, 7, 8, 9, 10, 12};
     int num_size = numbers.size();
     for(int i = 0;i<num_size;i++){
         double sum_info = 0;
         temp.second = i;
+        double case_counter[13] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         //get all case distribution 
         for(int j = 0;j<num_size;j++){
             case_counter[get_case(numbers[i], j)]+=1.0;
@@ -131,6 +131,7 @@ int calculate_best_guess(){
     }
     //sort dulu baru nanti ganti jadi max
     sort(Information.begin(), Information.end(), compare_info);
+    // sort(Information.begin(), Information.end());
     //print information
     int total = 5 < num_size ? 5: num_size;
     cout << "Computer best: " << total << "/" << num_size << " guesses\n";
@@ -461,5 +462,7 @@ int main(){
 		}
 		turns++;
 	}
+    char closer;
+    cin >> closer;
     return 0;
 }
