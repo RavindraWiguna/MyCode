@@ -94,7 +94,6 @@ int calculate_best_guess(){
     double case_counter[13] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     int valid_case[9] = {0, 3, 4, 6, 7, 8, 9, 10, 12};
     int num_size = comp_pool.size();
-    std::cout<<"start calculating\n";
     for(int i = 0;i<num_size;i++){
         std::pair<double, int> temp;
         double sum_info = 0;
@@ -114,10 +113,8 @@ int calculate_best_guess(){
         temp.first = sum_info;
         Information.push_back(temp);
     }
-    std::cout << "sorting best guesses\n";
     //sort dulu baru nanti ganti jadi max
     sort(Information.begin(), Information.end());
-    std::cout << "sorting complete\n";
     //print information
     int total = 5 < num_size ? 5: num_size;
     std:: cout << "Computer best: " << total << "/" << num_size << " guesses\n";
@@ -282,7 +279,6 @@ void computer_algorithm(std::string comp_secret, bool& game_over){
         game_over=true;
         return;
     }
-    std::cout<<"calculating best guesses\n";
     int index_guess = calculate_best_guess();
     std::cout << "Is this your number? "<< comp_pool[index_guess] << "\n";
     std::cin >> angka >> pos;
