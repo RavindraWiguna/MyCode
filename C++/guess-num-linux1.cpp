@@ -233,7 +233,7 @@ void computer_algorithm(std::string comp_secret, bool& game_over){
         std::cout << "so your number is : "<< comp_pool[index_guess] << "\n";
         std::cout << "and my number is " << comp_secret << "\n";
         std::cout << "Chance i got this right is 1 out of " << comp_pool.size() << "\n";
-        std::cout << "You are " << human_pool.size() << " guesses away from beating me!\n"; 
+        if(!game_over)std::cout << "You are " << human_pool.size() << " guesses away from beating me!\n"; 
         game_over = true;
     }
 }
